@@ -24,6 +24,18 @@ body {
     align-items: center;
 }
 
+.controls .controls_range {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls_range .textRange {
+    all:unset;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
 .controls .controls_btns {
     margin-bottom: 30px;
 }
