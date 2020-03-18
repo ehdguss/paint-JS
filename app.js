@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
+const rangeBox = document.getElementById("textRange");
 const mode = document.getElementById("jsMode");
 
 canvas.width = 700;
@@ -46,6 +47,13 @@ function handleRangeChange(event) {
     ctx.lineWidth = size;
 }
 
+function handleRangeChangeBox(event) {
+    const value = rangeBox.defaultValue;
+    const size = rangeBox.value;
+
+    value = size;
+}
+
 function handleModeClick(event) {
     if(filling === true) {
         filling = false;
@@ -67,6 +75,10 @@ Array.from(colors).forEach(color => color.addEventListener("click", handleColorC
 
 if(range) {
     range.addEventListener("input", handleRangeChange);
+}
+
+if(rangeBox) {
+    rangeBox.addEventListener("submit", handleRangeChangeBox);
 }
 
 if(mode) {
