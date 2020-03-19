@@ -47,11 +47,9 @@ function handleRangeChange(event) {
     ctx.lineWidth = size;
 }
 
-function handleRangeChangeBox(event) {
-    const value = rangeBox.defaultValue;
-    const size = rangeBox.value;
-
-    value = size;
+function handleTextChange() {
+    const width = ctx.lineWidth;
+    rangeBox.defaultValue = width.toFixed(1);
 }
 
 function handleModeClick(event) {
@@ -75,10 +73,7 @@ Array.from(colors).forEach(color => color.addEventListener("click", handleColorC
 
 if(range) {
     range.addEventListener("input", handleRangeChange);
-}
-
-if(rangeBox) {
-    rangeBox.addEventListener("submit", handleRangeChangeBox);
+    range.addEventListener("input", handleTextChange);
 }
 
 if(mode) {
